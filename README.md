@@ -15,6 +15,7 @@ Explainable A-share research, honest data provenance, and inspectable operations
   <a href="docs/ARCHITECTURE.md">框架设计</a> ·
   <a href="docs/PROJECT_ANALYSIS.md">项目分析</a> ·
   <a href="docs/RUN_HISTORY.md">运行记录</a> ·
+  <a href="media/PUBLISHED.md">75 秒演示</a> ·
   <a href="docs/DEPLOYMENT.md">部署</a>
 </p>
 
@@ -36,6 +37,12 @@ FreeTrade 将这些问题放进一个小而完整的流程：Python 采集与计
 | 简单的交付方式 | 单个 HTML、原子替换、HTTP / 链接 / 内容一致性核验 |
 
 > 这是规则驱动的研究原型，没有 LLM 推理、自动下单或收益回测。演示数据不对应真实证券；评分与价格区间不是投资建议或盈利承诺。
+
+### 75 秒，看懂为什么 HTTP 200 还不够
+
+[Bilibili](https://www.bilibili.com/video/BV1TFHP6LEgD/) · [YouTube](https://www.youtube.com/watch?v=OfB5z9zKfQA) · [抖音竖版](https://www.douyin.com/video/7700169947489635599) · [X](https://x.com/eustancewu/status/2113931499531874630)
+
+真实演示界面、五因子路径、失败记录和数据日期，一次讲清。[下载横版 / 竖版与封面](https://github.com/eust-w/freetrade/releases/tag/v0.1.0)，或查看[可复现分镜与制作脚本](media/README.md)。
 
 ## 一分钟运行
 

@@ -166,12 +166,20 @@ def frame(scene, idx, portrait=False):
     return path
 
 
+def covers():
+    landscape = Image.open(OUT / "scene-00-landscape.png")
+    landscape.resize((1280, 720), Image.Resampling.LANCZOS).save(OUT / "cover.jpg", quality=94)
+    ImageOps.fit(landscape, (1200, 900), centering=(0, 0)).save(OUT / "cover-4x3.jpg", quality=94)
+    portrait = Image.open(OUT / "scene-00-portrait.png")
+    ImageOps.fit(portrait, (900, 1200), centering=(0.5, 0)).save(OUT / "cover-3x4.jpg", quality=94)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     timings=[]
     for i,scene in enumerate(SCENES):
         audio=OUT/f"voice-{i:02d}.aiff"
-        command(["say","-v","Tingting","-r","175","-o",str(audio),scene["narration"]])
+        command(["say","-v","Tingting","-r","200","-o",str(audio),scene["narration"]])
         timings.append(round(duration(audio)+0.65,2))
     for portrait in (False,True):
         name="portrait" if portrait else "landscape"
@@ -195,12 +203,12 @@ def main():
         command(["ffmpeg","-hide_banner","-loglevel","error","-y","-f","concat","-safe","0",
                  "-i",str(listing),"-c","copy","-movflags","+faststart",str(OUT/f"freetrade-{name}.mp4")])
     # Original cover composition, not a third-party image.
-    cover=Image.open(OUT/"scene-00-landscape.png")
-    cover.resize((1280,720),Image.Resampling.LANCZOS).save(OUT/"cover.jpg",quality=94)
+    covers()
     manifest={"scene_seconds":timings,"duration_seconds":sum(timings),
               "narration":"macOS Tingting synthetic voice","music":None,
               "visuals":"original diagrams and repository demo screenshots",
-              "files":["freetrade-landscape.mp4","freetrade-portrait.mp4","cover.jpg"]}
+              "files":["freetrade-landscape.mp4","freetrade-portrait.mp4",
+                       "cover.jpg","cover-4x3.jpg","cover-3x4.jpg"]}
     (OUT/"manifest.json").write_text(json.dumps(manifest,indent=2))
     print(json.dumps(manifest))
 

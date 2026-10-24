@@ -2,7 +2,16 @@
 
 ## v0.1.1 中英文双语版
 
-新增完整英文旁白与中文旁白，各带中英双语字幕及横竖版；[GitHub Release](https://github.com/eust-w/freetrade/releases/tag/v0.1.1) 提供四套成片和独立 SRT。下表社交链接仍指向 v0.1.0 中文单语版，本次不将旧帖标为双语新版，也不删除旧视频。
+新增完整英文旁白与中文旁白，各带中英双语字幕及横竖版；[GitHub Release](https://github.com/eust-w/freetrade/releases/tag/v0.1.1) 提供四套成片和独立 SRT。英文配音版作为独立作品发布，不覆盖旧中文视频。发布文案见 [publish-copy.en.json](publish-copy.en.json)。
+
+| 平台 | 英文配音版 | 当前核验 |
+| --- | --- | --- |
+| YouTube | [HTTP 200 Is Not Fresh Data](https://www.youtube.com/watch?v=NFEYK9nV4iE) | 公开播放页显示正确英文标题、AI 内容标识与 1:09 视频 |
+| Bilibili | [FreeTrade 英文演示](https://www.bilibili.com/video/BV1d4HK6eE3a/) | 公开播放页可访问，英文介绍与 AI 内容声明可见 |
+| X | [FreeTrade English demo](https://x.com/eustancewu/status/2113972932024340752) | 发布后帖子包含英文文案、仓库链接与视频附件，不是纯文字帖子 |
+| 抖音 | 待补公开链接 | 2026-10-24 20:37 已提交 1:09 英文竖版，当前审核中，尚未核验公开播放页 |
+
+核验日期：2026-10-24（Asia/Shanghai）。状态仅代表本次浏览器观察；提交成功与审核通过、公开可播分别记录。
 
 ## v0.1.0 原中文单语版
 

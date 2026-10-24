@@ -1,0 +1,18 @@
+{
+  "youtube": {
+    "title": "HTTP 200 Is Not Fresh Data | FreeTrade Open-Source Demo (English)",
+    "description": "A dashboard can be online while its data is stale. FreeTrade makes the difference visible.\n\nThis English-narrated walkthrough, with Chinese and English subtitles, shows the research dashboard, five-factor rules, snapshot pipeline, and sanitized observations from 127 retained legacy run logs.\n\nCode and English README: https://github.com/eust-w/freetrade\nVideos, subtitles and checksums: https://github.com/eust-w/freetrade/releases/tag/v0.1.1\n\nThe dashboard uses clearly labeled synthetic demo data. Historical log counts are observations, not investment returns or a complete scheduling success rate. No hidden AI inference, automated orders, or return claims. This is a software-engineering and research demonstration, not investment advice.\n\nNarration: synthetic macOS Samantha voice. Original diagrams and demo screenshots. No third-party music.\n\n#OpenSource #Python #DataEngineering"
+  },
+  "bilibili": {
+    "title": "HTTP 200 Is Not Fresh Data｜FreeTrade 英文演示·中英双语字幕",
+    "description": "A page can be online while its market data is stale. This English-narrated FreeTrade demo explains five-factor rules, dated snapshots, and 127 retained legacy run logs. Chinese and English subtitles included.\n\n英文配音版，烧录中英双语字幕。公开代码、架构与脱敏运行记录，不把页面可访问等同于行情已更新。\n源码：https://github.com/eust-w/freetrade\n视频与字幕：https://github.com/eust-w/freetrade/releases/tag/v0.1.1\n\nSynthetic demo data; research only, not investment advice or return claims. 画面使用合成演示数据，无自动下单。旁白为系统合成语音，图示原创，无第三方音乐。",
+    "tags": ["开源", "Python", "编程", "数据分析", "软件工程", "英文演示"]
+  },
+  "douyin": {
+    "title": "FreeTrade英文版：200不等于更新",
+    "description": "HTTP 200 is not fresh data. FreeTrade's English demo: five-factor rules, dated snapshots and 127 retained logs, failures included. English voice + 中英双语字幕。源码：github.com/eust-w/freetrade。合成数据演示，仅研究交流，不构成投资建议，不承诺收益。旁白为系统合成语音。 #开源项目 #Python #数据分析 #英文演示"
+  },
+  "x": {
+    "text": "HTTP 200 is not fresh data.\n\nFreeTrade's English demo is here: five-factor rules, dated snapshots, and 127 retained run logs, failures included.\n\nEnglish voice + EN/ZH subtitles. Synthetic voice/data; research only.\nhttps://github.com/eust-w/freetrade\n#OpenSource #Python"
+  }
+}

@@ -29,7 +29,7 @@ Both narration editions include **burned-in Chinese and English subtitles**, bil
 
 [Release assets, subtitles, and checksums](https://github.com/eust-w/freetrade/releases/tag/v0.1.1) · [Reproducible media sources](media/README.md)
 
-Watch the English-narrated edition on [YouTube](https://www.youtube.com/watch?v=NFEYK9nV4iE), [Bilibili](https://www.bilibili.com/video/BV1d4HK6eE3a/), or [X](https://x.com/eustancewu/status/2113972932024340752). The English portrait edition has been submitted to Douyin and is awaiting review. See the [publication record](media/PUBLISHED.md) for verified platform states.
+Watch the English-narrated edition on [YouTube](https://www.youtube.com/watch?v=NFEYK9nV4iE), [Bilibili](https://www.bilibili.com/video/BV1d4HK6eE3a/), [X](https://x.com/eustancewu/status/2113972932024340752), or [Douyin (portrait)](https://www.douyin.com/video/7700212457297431859). See the [publication record](media/PUBLISHED.md) for verified platform states.
 
 Narration uses disclosed synthetic system voices. Visuals are original diagrams and demo screenshots; no third-party music is included. [Earlier Chinese-only social posts](media/PUBLISHED.md) are a separate edition.
 

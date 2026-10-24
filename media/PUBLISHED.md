@@ -9,7 +9,7 @@
 | YouTube | [HTTP 200 Is Not Fresh Data](https://www.youtube.com/watch?v=NFEYK9nV4iE) | 公开播放页显示正确英文标题、AI 内容标识与 1:09 视频 |
 | Bilibili | [FreeTrade 英文演示](https://www.bilibili.com/video/BV1d4HK6eE3a/) | 公开播放页可访问，英文介绍与 AI 内容声明可见 |
 | X | [FreeTrade English demo](https://x.com/eustancewu/status/2113972932024340752) | 发布后帖子包含英文文案、仓库链接与视频附件，不是纯文字帖子 |
-| 抖音 | 待补公开链接 | 2026-10-24 20:37 已提交 1:09 英文竖版，当前审核中，尚未核验公开播放页 |
+| 抖音 | [FreeTrade 英文竖版](https://www.douyin.com/video/7700212457297431859) | 创作中心显示已发布，公开页可播放 1:09 竖版视频，英文介绍与 AI 内容声明可见 |
 
 核验日期：2026-10-24（Asia/Shanghai）。状态仅代表本次浏览器观察；提交成功与审核通过、公开可播分别记录。
 

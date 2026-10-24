@@ -51,7 +51,7 @@ FreeTrade 将这些问题放进一个小而完整的流程：Python 采集与计
 
 [双语版完整附件与字幕](https://github.com/eust-w/freetrade/releases/tag/v0.1.1) · [制作脚本与分镜](media/README.md)
 
-英文旁白版在线观看：[YouTube](https://www.youtube.com/watch?v=NFEYK9nV4iE) · [Bilibili](https://www.bilibili.com/video/BV1d4HK6eE3a/) · [X](https://x.com/eustancewu/status/2113972932024340752)。抖音英文版已提交审核；各平台核验状态见 [发布记录](media/PUBLISHED.md)。
+英文旁白版在线观看：[YouTube](https://www.youtube.com/watch?v=NFEYK9nV4iE) · [Bilibili](https://www.bilibili.com/video/BV1d4HK6eE3a/) · [X](https://x.com/eustancewu/status/2113972932024340752) · [抖音竖版](https://www.douyin.com/video/7700212457297431859)。各平台核验状态见 [发布记录](media/PUBLISHED.md)。
 
 此前发布的 75 秒中文单语版：
 

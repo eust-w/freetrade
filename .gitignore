@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+var/
+dist/
+media/export/
+*.aiff
+*.mp4
+.DS_Store
+*.egg-info/

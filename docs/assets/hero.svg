@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#213d4c" stroke-width="1"/></pattern></defs>
+<rect width="1200" height="420" rx="24" fill="#102c3b"/><rect width="1200" height="420" rx="24" fill="url(#grid)" opacity=".45"/>
+<circle cx="1040" cy="92" r="190" fill="#1d594f" opacity=".35"/>
+<text x="70" y="77" fill="#87dbc3" font-family="monospace" font-size="18" letter-spacing="4">EXPLAINABLE RESEARCH / OPEN OPERATIONS</text>
+<text x="66" y="190" fill="#f7f2e8" font-family="Georgia,serif" font-size="96" font-weight="bold">FreeTrade</text>
+<text x="72" y="255" fill="#f7f2e8" font-family="sans-serif" font-size="30">看得懂的分数，追得溯的数据。</text>
+<text x="72" y="334" fill="#9bb8bd" font-family="sans-serif" font-size="20">5 因子 · 127 份运行记录 · 完全离线的演示</text>
+<g fill="#87dbc3"><rect x="880" y="242" width="30" height="70" rx="5"/><rect x="925" y="202" width="30" height="110" rx="5"/><rect x="970" y="174" width="30" height="138" rx="5"/><rect x="1015" y="220" width="30" height="92" rx="5"/><rect x="1060" y="150" width="30" height="162" rx="5"/></g>
+<text x="881" y="347" fill="#9bb8bd" font-family="monospace" font-size="14">RULES. DATES. EVIDENCE.</text>
+</svg>

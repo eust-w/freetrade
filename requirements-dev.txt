@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8.4,<9
+pip-audit>=2.9,<3
+Pillow>=11.3,<13

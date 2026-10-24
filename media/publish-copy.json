@@ -1,0 +1,34 @@
+{
+  "youtube": {
+    "title": "HTTP 200，不代表行情更新了｜我把 FreeTrade 的代码、架构和运行记录开源了",
+    "description": "一个 A 股研究页面，为什么要把失败记录一起开源？\n\nFreeTrade 用 Python 进行五因子筛选、生成带日期的快照，并发布静态研究页面。本视频展示真实界面、框架设计与 127 份保留日志的脱敏统计，解释为什么 HTTP 200 不等于实时数据更新。\n\n代码与文档：https://github.com/eust-w/freetrade\n作者：https://github.com/eust-w\n主页：https://claworkers.com/\n\n画面中的证券与价格为合成演示，不对应真实证券。运行数字是旧部署日志的观察结果，不代表收益或完整调度成功率。无自动下单，无收益回测。本内容用于软件工程与量化研究交流，不构成投资建议。\n旁白为系统合成语音，图示与排版为原创。\n\n#开源 #Python #数据工程",
+    "tags": [
+      "开源",
+      "Python",
+      "数据工程",
+      "量化研究",
+      "FreeTrade"
+    ],
+    "category": "Science & Technology"
+  },
+  "bilibili": {
+    "title": "我把量化研究项目开源了，连失败记录也放出来｜FreeTrade",
+    "description": "HTTP 200，不代表行情真的更新。这个视频用 FreeTrade 的真实界面和 127 份历史日志，讲清多因子筛选、静态部署、缓存降级与数据新鲜度。\n源码/架构/脱敏运行记录：https://github.com/eust-w/freetrade\n合成示例不对应真实证券；没有自动下单或收益承诺，仅用于软件工程与研究交流，不构成投资建议。旁白为系统合成语音，图示原创。",
+    "tags": [
+      "开源",
+      "Python",
+      "编程",
+      "数据分析",
+      "软件工程",
+      "量化研究"
+    ],
+    "category": "科技 / 计算机技术"
+  },
+  "douyin": {
+    "title": "HTTP200，行情就更新了吗",
+    "description": "我把 FreeTrade 开源了，连失败记录也一起放出来。五因子、框架设计、127份历史日志，讲清缓存与数据新鲜度。GitHub：eust-w/freetrade。合成演示，仅研究交流，不构成投资建议。旁白为合成语音。 #开源项目 #Python #程序员 #数据分析"
+  },
+  "x": {
+    "text": "HTTP 200 ≠ fresh market data.\n\nI open-sourced FreeTrade: explainable A-share research, architecture, an offline demo, and 127 retained run logs, failures included.\n\nCode: https://github.com/eust-w/freetrade\nSynthetic demo data. Research only; no return claims.\n#OpenSource #Python"
+  }
+}

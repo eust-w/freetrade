@@ -1,0 +1,51 @@
+[
+  {
+    "kind": "hook",
+    "eyebrow": "FREETRADE / OPEN SOURCE",
+    "title": "HTTP 200，\n行情就更新了吗？",
+    "sub": "页面可用  ≠  数据新鲜",
+    "narration": "网页返回二百，行情就一定更新了吗？做这个 A 股研究项目时，我发现，连通、刷新和数据新鲜度，是三件不同的事。"
+  },
+  {
+    "kind": "demo",
+    "eyebrow": "01 / A REAL INTERFACE",
+    "title": "把研究过程\n放到一张页面里",
+    "sub": "实际浏览器截图 · 合成数据演示",
+    "narration": "这是 FreeTrade。它用 Python 筛选研究候选，再生成一张可以直接部署的静态页面。画面里的证券名称和数值，是明确标注的合成演示。"
+  },
+  {
+    "kind": "factors",
+    "eyebrow": "02 / EXPLAINABLE BY DESIGN",
+    "title": "五组因子。\n每个分数都有来处。",
+    "sub": "固定权重 · 规则可检查",
+    "narration": "估值、成长、质量、动量和资金，组成五组固定权重。流动性过滤、波动惩罚和行业限制，都在代码里。这里没有隐藏的 AI 推理，也没有自动下单。"
+  },
+  {
+    "kind": "flow",
+    "eyebrow": "03 / SMALL AND COMPLETE",
+    "title": "从数据到页面，\n路径全部公开。",
+    "sub": "Python → 快照 → HTML → 核验",
+    "narration": "数据采集之后，生成带日期的快照，再渲染页面。部署后，除了检查能不能打开，还会比较线上内容和本地产物，确认真正发布了这一版。"
+  },
+  {
+    "kind": "runs",
+    "eyebrow": "04 / FAILURES INCLUDED",
+    "title": "127 份记录。\n失败也放出来。",
+    "sub": "保留日志观察值 · 不是收益证明",
+    "narration": "保留下来的 一百二十七份日志，只有五份标为实时成功。一百零五份使用了缓存，十七份没有完整成功记录。这些历史观察值，也一起开源。"
+  },
+  {
+    "kind": "freshness",
+    "eyebrow": "05 / HONEST DATA STATES",
+    "title": "生成时间，\n不再冒充数据日期。",
+    "sub": "demo / live / cached / fallback",
+    "narration": "开源版把生成时间和数据日期分开。真实采集失败，默认报错；只有明确允许时才使用历史缓存，而且不会拿演示数据冒充真实行情。"
+  },
+  {
+    "kind": "end",
+    "eyebrow": "BUILD IN THE OPEN",
+    "title": "代码、架构、记录。\n一起开源。",
+    "sub": "github.com/eust-w/freetrade",
+    "narration": "代码、框架设计、运行记录和离线演示，都在 GitHub。欢迎一起完善数据质量和回测。它是研究工具，不是投资建议，也不承诺收益。"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "records": 127,
+  "first_run": "20260615-163946",
+  "last_run": "20260901-120119",
+  "modes": {
+    "unknown": 17,
+    "fallback": 105,
+    "live": 5
+  },
+  "render_statuses": {
+    "not_observed": 17,
+    "ok": 110
+  },
+  "http_statuses": {
+    "None": 17,
+    "200": 110
+  },
+  "interpretation": "Retained logs only; not a complete scheduler ledger. HTTP 200 is not fresh-data success."
+}

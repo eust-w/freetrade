@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "data_as_of": "2026-06-15",
+  "stocks": [
+    {
+      "rank": 1,
+      "code": "DEMO01",
+      "name": "合成样本 A",
+      "score": 84,
+      "price": 25,
+      "change": -2.19,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "22-24",
+      "shortStop": "20",
+      "shortTake": "28 / 31",
+      "longBuy": "19-21",
+      "longStop": "16",
+      "longTake": "29 / 35",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 82 / 成长因子 78",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 2,
+      "code": "DEMO02",
+      "name": "合成样本 B",
+      "score": 82.3,
+      "price": 32.5,
+      "change": -1.46,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "29-31",
+      "shortStop": "27",
+      "shortTake": "35 / 38",
+      "longBuy": "26-28",
+      "longStop": "23",
+      "longTake": "36 / 42",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 80 / 成长因子 77",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 3,
+      "code": "DEMO03",
+      "name": "合成样本 C",
+      "score": 80.6,
+      "price": 40,
+      "change": -0.73,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "36-38",
+      "shortStop": "34",
+      "shortTake": "42 / 45",
+      "longBuy": "33-35",
+      "longStop": "30",
+      "longTake": "43 / 49",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 78 / 成长因子 76",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 4,
+      "code": "DEMO04",
+      "name": "合成样本 D",
+      "score": 78.9,
+      "price": 47.5,
+      "change": 0,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "43-45",
+      "shortStop": "41",
+      "shortTake": "49 / 52",
+      "longBuy": "40-42",
+      "longStop": "37",
+      "longTake": "50 / 56",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 76 / 成长因子 75",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 5,
+      "code": "DEMO05",
+      "name": "合成样本 E",
+      "score": 77.2,
+      "price": 55,
+      "change": 0.73,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "50-52",
+      "shortStop": "48",
+      "shortTake": "56 / 59",
+      "longBuy": "47-49",
+      "longStop": "44",
+      "longTake": "57 / 63",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 74 / 成长因子 74",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 6,
+      "code": "DEMO06",
+      "name": "合成样本 F",
+      "score": 75.5,
+      "price": 62.5,
+      "change": 1.46,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "57-59",
+      "shortStop": "55",
+      "shortTake": "63 / 66",
+      "longBuy": "54-56",
+      "longStop": "51",
+      "longTake": "64 / 70",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 72 / 成长因子 73",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 7,
+      "code": "DEMO07",
+      "name": "合成样本 G",
+      "score": 73.8,
+      "price": 70,
+      "change": 2.19,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "64-66",
+      "shortStop": "62",
+      "shortTake": "70 / 73",
+      "longBuy": "61-63",
+      "longStop": "58",
+      "longTake": "71 / 77",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 70 / 成长因子 72",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 8,
+      "code": "DEMO08",
+      "name": "合成样本 H",
+      "score": 72.1,
+      "price": 77.5,
+      "change": 2.92,
+      "action": "模型观察",
+      "hot": false,
+      "shortBuy": "71-73",
+      "shortStop": "69",
+      "shortTake": "77 / 80",
+      "longBuy": "68-70",
+      "longStop": "65",
+      "longTake": "78 / 84",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 68 / 成长因子 71",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 9,
+      "code": "DEMO09",
+      "name": "合成样本 I",
+      "score": 70.4,
+      "price": 85,
+      "change": 3.65,
+      "action": "观察过热",
+      "hot": true,
+      "shortBuy": "78-80",
+      "shortStop": "76",
+      "shortTake": "84 / 87",
+      "longBuy": "75-77",
+      "longStop": "72",
+      "longTake": "85 / 91",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 66 / 成长因子 70",
+        "规则可检查，结果可追溯"
+      ]
+    },
+    {
+      "rank": 10,
+      "code": "DEMO10",
+      "name": "合成样本 J",
+      "score": 68.7,
+      "price": 92.5,
+      "change": 4.38,
+      "action": "观察过热",
+      "hot": true,
+      "shortBuy": "85-87",
+      "shortStop": "83",
+      "shortTake": "91 / 94",
+      "longBuy": "82-84",
+      "longStop": "79",
+      "longTake": "92 / 98",
+      "drivers": [
+        "合成示例，不对应真实证券",
+        "动量因子 64 / 成长因子 69",
+        "规则可检查，结果可追溯"
+      ]
+    }
+  ]
+}

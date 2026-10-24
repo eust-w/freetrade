@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FreeTrade · 可解释的 A 股研究</title>
+    <meta
+      name="description"
+      content="基于多因子框架的 A 股 Top10 量化选股、短线与长期交易计划展示。"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --panel-soft: #f0f4f8;
+        --ink: #18212f;
+        --muted: #5c697a;
+        --line: #dfe5ee;
+        --blue: #1f5eff;
+        --teal: #009e8e;
+        --red: #d64545;
+        --amber: #b97805;
+        --violet: #6750c8;
+        --shadow: 0 18px 48px rgba(28, 39, 61, 0.09);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        letter-spacing: 0;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1440px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: rgba(246, 247, 251, 0.92);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(31, 94, 255, 0.95), rgba(0, 158, 142, 0.95)),
+          #1f5eff;
+        color: white;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 10px 24px rgba(31, 94, 255, 0.22);
+      }
+
+      .brand h1 {
+        font-size: 18px;
+        line-height: 1.2;
+        margin: 0;
+        font-weight: 720;
+      }
+
+      .brand p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .nav-meta {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .tag {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 999px;
+        padding: 7px 10px;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+
+      main {
+        padding: 28px 0 48px;
+      }
+
+      .overview {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .hero,
+      .board,
+      .card,
+      .note {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        padding: 28px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 260px;
+        gap: 26px;
+        min-height: 310px;
+      }
+
+      .hero h2 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 1.02;
+        font-weight: 800;
+        overflow-wrap: anywhere;
+      }
+
+      .hero p {
+        margin: 18px 0 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .status-line {
+        margin-top: 26px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .status {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: var(--panel-soft);
+        font-size: 13px;
+        color: var(--ink);
+      }
+
+      .status strong {
+        color: var(--blue);
+      }
+
+      .radar {
+        position: relative;
+        align-self: stretch;
+        min-height: 230px;
+        border-radius: 8px;
+        border: 1px solid #d7e0ec;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 50%, rgba(31, 94, 255, 0.12), transparent 34%),
+          linear-gradient(180deg, #fbfdff, #eef4fb);
+      }
+
+      .radar svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .pulse-label {
+        position: absolute;
+        left: 16px;
+        bottom: 14px;
+        display: grid;
+        gap: 3px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .pulse-label strong {
+        color: var(--ink);
+        font-size: 18px;
+      }
+
+      .board {
+        padding: 20px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .board h3,
+      .section-title h3,
+      .note h3 {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.3;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        min-height: 98px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .metric strong {
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      .metric small {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+        margin: 28px 0 14px;
+      }
+
+      .section-title p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+        text-align: right;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        padding: 18px;
+        display: grid;
+        gap: 15px;
+      }
+
+      .card-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .stock-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .rank {
+        width: 30px;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: #edf3ff;
+        color: var(--blue);
+        font-weight: 760;
+        font-size: 13px;
+        flex: 0 0 auto;
+      }
+
+      .stock-name h4 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .stock-name p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .score {
+        text-align: right;
+      }
+
+      .score strong {
+        display: block;
+        font-size: 24px;
+        color: var(--teal);
+      }
+
+      .score span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .price-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .mini {
+        background: var(--panel-soft);
+        border-radius: 8px;
+        padding: 10px;
+        min-height: 68px;
+      }
+
+      .mini span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .mini strong {
+        display: block;
+        margin-top: 5px;
+        font-size: 15px;
+        line-height: 1.25;
+      }
+
+      .plan {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .plan-box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+      }
+
+      .plan-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+        font-weight: 720;
+        font-size: 13px;
+      }
+
+      .pill {
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 11px;
+        color: white;
+      }
+
+      .pill.wait {
+        background: var(--amber);
+      }
+
+      .pill.hot {
+        background: var(--red);
+      }
+
+      .levels {
+        display: grid;
+        gap: 7px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .levels b {
+        color: var(--ink);
+        font-size: 13px;
+      }
+
+      .drivers {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .drivers li {
+        display: flex;
+        gap: 8px;
+      }
+
+      .drivers li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        margin-top: 7px;
+        border-radius: 50%;
+        background: var(--teal);
+        flex: 0 0 auto;
+      }
+
+      .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .note {
+        padding: 18px;
+        box-shadow: none;
+      }
+
+      .note p,
+      .note li {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .note ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      footer {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+        padding: 24px 0 0;
+      }
+
+      @media (max-width: 1100px) {
+        .overview,
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .radar {
+          min-height: 220px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cards,
+        .notes-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .section-title p {
+          text-align: left;
+        }
+
+        .nav-meta {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .tag {
+          white-space: normal;
+          overflow-wrap: anywhere;
+        }
+
+        .hero h2 {
+          font-size: 29px;
+          line-height: 1.12;
+          word-break: break-all;
+        }
+
+        .hero p {
+          font-size: 15px;
+          line-height: 1.75;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .shell {
+          width: min(100% - 20px, 1440px);
+        }
+
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 12px 0;
+        }
+
+        .hero,
+        .board,
+        .card,
+        .note {
+          padding: 14px;
+        }
+
+        .metric-grid,
+        .price-row,
+        .plan {
+          grid-template-columns: 1fr;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell nav">
+        <div class="brand">
+          <div class="mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 16.5 9.2 11l3.5 3.2L20 6.8" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M19.8 6.8v5.1M19.8 6.8h-5.1" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <h1>FreeTrade 量化研究</h1>
+            <p>把数据、规则与运行证据放在同一页</p>
+          </div>
+        </div>
+        <div class="nav-meta">
+          <span class="tag">生成：{{GENERATED_AT}}</span>
+          <span class="tag">数据日期：{{DATA_AS_OF}}</span>
+          <span class="tag">{{STATUS}}</span>
+          <a class="tag" href="https://github.com/eust-w" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="tag" href="https://claworkers.com/" target="_blank" rel="noopener noreferrer">首页</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="overview">
+        <div class="hero">
+          <div>
+            <h2>看得懂的分数，追得溯的数据。</h2>
+            <p>
+              从估值、成长、质量、动量与资金五组因子，筛选研究候选池。演示模式使用虚构名称和合成数值，展示评分与区间生成流程。
+            </p>
+            <div class="status-line">
+              <span class="status">数据来源：<strong>{{SOURCE}}</strong></span>
+              <span class="status">固定权重：动量 25% / 成长 22% / 资金 20%</span>
+              <span class="status">边界：无自动下单 · 无收益回测</span>
+            </div>
+          </div>
+          <div class="radar" aria-label="装饰性图形，不代表价格或收益走势">
+            <svg viewBox="0 0 260 240" role="img">
+              <defs>
+                <linearGradient id="line" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#1f5eff" />
+                  <stop offset="100%" stop-color="#009e8e" />
+                </linearGradient>
+              </defs>
+              <path d="M22 183 C55 128 78 156 110 101 S172 47 238 52" fill="none" stroke="url(#line)" stroke-width="5" stroke-linecap="round" />
+              <path d="M22 183 C55 128 78 156 110 101 S172 47 238 52 L238 218 L22 218 Z" fill="url(#line)" opacity="0.12" />
+              <g stroke="#c8d4e4" stroke-width="1">
+                <path d="M22 60H238" />
+                <path d="M22 112H238" />
+                <path d="M22 164H238" />
+                <path d="M58 28V218" />
+                <path d="M130 28V218" />
+                <path d="M202 28V218" />
+              </g>
+              <g fill="#ffffff" stroke="#1f5eff" stroke-width="3">
+                <circle cx="110" cy="101" r="6" />
+                <circle cx="238" cy="52" r="6" />
+              </g>
+            </svg>
+            <div class="pulse-label">
+              <span>模型输出</span>
+              <strong>Top 10</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="board">
+          <h3>因子权重</h3>
+          <div class="metric-grid">
+            <div class="metric">
+              <span>动量</span>
+              <strong>25%</strong>
+              <small>20/60 日收益与均线结构</small>
+            </div>
+            <div class="metric">
+              <span>成长</span>
+              <strong>22%</strong>
+              <small>营收、利润与三年增速</small>
+            </div>
+            <div class="metric">
+              <span>资金</span>
+              <strong>20%</strong>
+              <small>主力净流入与流通市值</small>
+            </div>
+            <div class="metric">
+              <span>估值 + 质量</span>
+              <strong>16% + 17%</strong>
+              <small>PE / PB / PEG 与经营质量</small>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <div class="section-title">
+        <h3>Top 10 研究候选</h3>
+        <p>规则区间仅用于解释模型。合成演示不对应真实证券；采集模式也必须核对数据日期。</p>
+      </div>
+      <section class="cards" id="cards"></section>
+
+      <div class="section-title">
+        <h3>风控说明</h3>
+        <p>Top20 每行业最多 3 个候选；高波动、连续上涨和过热动量按规则降权。</p>
+      </div>
+      <section class="notes-grid">
+        <article class="note">
+          <h3>区间生成</h3>
+          <ul>
+            <li>短期锚点由 5 日与 10 日均线计算。</li>
+            <li>ATR 参与构造观察区间、止损与目标价。</li>
+            <li>价格区间是启发式规则，尚无收益有效性验证。</li>
+          </ul>
+        </article>
+        <article class="note">
+          <h3>数据生命周期</h3>
+          <ul>
+            <li>生成时间与数据日期分别展示，缓存不会被标为新行情。</li>
+            <li>采集失败默认报错，只有显式开启才允许历史缓存回退。</li>
+            <li>纯静态页面可由任意静态服务器托管。</li>
+          </ul>
+        </article>
+        <article class="note">
+          <h3>数据限制</h3>
+          <p>
+            北向个股变化、新闻热度和舆情分数本轮缺少稳定可审计数据，未纳入分数。
+            不提供完整的监管事件数据库；排除名单由使用者自行维护。
+          </p>
+        </article>
+      </section>
+
+      <footer>
+        数据口径：演示为合成数据；可选采集器使用东方财富 / AKShare，报告期间需显式配置。
+        本页面仅用于量化研究展示，不构成任何投资建议或收益保证。
+      </footer>
+    </main>
+
+    <script>
+      const stocks = [];
+
+      const cards = document.querySelector("#cards");
+      cards.innerHTML = stocks
+        .map(
+          (stock) => `
+            <article class="card">
+              <div class="card-head">
+                <div class="stock-name">
+                  <span class="rank">${stock.rank}</span>
+                  <div>
+                    <h4>${stock.name}</h4>
+                    <p>${stock.code}</p>
+                  </div>
+                </div>
+                <div class="score">
+                  <strong>${stock.score.toFixed(2)}</strong>
+                  <span>综合评分</span>
+                </div>
+              </div>
+              <div class="price-row">
+                <div class="mini"><span>样本价格</span><strong>${stock.price.toFixed(2)}</strong></div>
+                <div class="mini"><span>样本涨跌</span><strong style="color:${stock.change >= 0 ? "var(--red)" : "var(--teal)"}">${stock.change.toFixed(2)}%</strong></div>
+                <div class="mini"><span>短线动作</span><strong>${stock.action}</strong></div>
+                <div class="mini"><span>交易状态</span><strong>${stock.hot ? "过热等待" : "回踩观察"}</strong></div>
+              </div>
+              <div class="plan">
+                <div class="plan-box">
+                  <div class="plan-title">5-10日计划 <span class="pill ${stock.hot ? "hot" : "wait"}">${stock.action}</span></div>
+                  <div class="levels">
+                    <span>买入区间：<b>${stock.shortBuy}</b></span>
+                    <span>止损：<b>${stock.shortStop}</b></span>
+                    <span>止盈：<b>${stock.shortTake}</b></span>
+                  </div>
+                </div>
+                <div class="plan-box">
+                  <div class="plan-title">长期模型区间 <span class="pill wait">分批</span></div>
+                  <div class="levels">
+                    <span>买入区间：<b>${stock.longBuy}</b></span>
+                    <span>止损：<b>${stock.longStop}</b></span>
+                    <span>止盈：<b>${stock.longTake}</b></span>
+                  </div>
+                </div>
+              </div>
+              <ul class="drivers">
+                ${stock.drivers.map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+            </article>
+          `
+        )
+        .join("");
+    </script>
+  </body>
+</html>

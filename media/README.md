@@ -1,5 +1,26 @@
 # FreeTrade 项目演示视频
 
+## 中英文双语版 / Bilingual Edition
+
+v0.1.1 提供中文旁白（Tingting）和英文旁白（Samantha）两套成片。每套都烧录中英文逐句字幕，并各导出 1920×1080 横版与 1080×1920 竖版。两种语言按各自语音时长独立对齐，视频图示也提供中英文；实际界面截图仍为中文。
+
+English and Chinese are separate narration editions. Both include burned-in Chinese and English captions, bilingual diagrams, and landscape/portrait exports. The original dashboard screenshots remain in Chinese.
+
+[下载四套成片 / Download all four exports](https://github.com/eust-w/freetrade/releases/tag/v0.1.1)
+
+```bash
+python -m media.build_bilingual --frames-only  # inspect layout first
+python -m media.build_bilingual                # render both languages and ratios
+```
+
+需要 macOS 系统语音、FFmpeg / ffprobe、Python 与 Pillow。源文案在 [storyboard.bilingual.json](storyboard.bilingual.json)，字幕时码由每段实际音频长度与 24fps 帧数计算，不套用另一种语言的时码。导出目录为 `media/export/bilingual/`，不进入 Git 历史。
+
+文件名中的 `zh` / `en` 表示**配音语言**，`bilingual` 表示**画面双语字幕**。每种配音另附中文、英文、双语三份 SRT，时码对应同配音的横竖版。`manifest.json` 记录时长与尺寸，`SHA256SUMS.txt` 用于附件校验。
+
+旧版社交平台视频不会被悄悄替换；各版本发布状态见 [PUBLISHED.md](PUBLISHED.md)。
+
+## 原中文单语版 / Original Chinese Edition
+
 素材来自本仓库真实浏览器截图、代码架构与脱敏运行记录。字幕与图示为原创排版，旁白为 macOS 系统合成语音；无第三方音乐、人物肖像或私人后台画面。数据演示使用虚构样本，历史运行数字来自 docs/runs/summary.json。
 
 ## 内容

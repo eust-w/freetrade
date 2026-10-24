@@ -1,5 +1,7 @@
 <p align="center"><img src="docs/assets/hero.svg" alt="FreeTrade — 看得懂的分数，追得溯的数据" width="100%"></p>
 
+<p align="center"><b>简体中文</b> · <a href="README.en.md">English</a></p>
+
 <p align="center">
   <a href="https://github.com/eust-w/freetrade/actions"><img src="https://github.com/eust-w/freetrade/actions/workflows/ci.yml/badge.svg" alt="Verify"></a>
   <img src="https://img.shields.io/badge/Python-3.11%2B-155e75" alt="Python 3.11+">
@@ -15,7 +17,7 @@ Explainable A-share research, honest data provenance, and inspectable operations
   <a href="docs/ARCHITECTURE.md">框架设计</a> ·
   <a href="docs/PROJECT_ANALYSIS.md">项目分析</a> ·
   <a href="docs/RUN_HISTORY.md">运行记录</a> ·
-  <a href="media/PUBLISHED.md">75 秒演示</a> ·
+  <a href="media/README.md">中英文演示</a> ·
   <a href="docs/DEPLOYMENT.md">部署</a>
 </p>
 
@@ -38,11 +40,22 @@ FreeTrade 将这些问题放进一个小而完整的流程：Python 采集与计
 
 > 这是规则驱动的研究原型，没有 LLM 推理、自动下单或收益回测。演示数据不对应真实证券；评分与价格区间不是投资建议或盈利承诺。
 
-### 75 秒，看懂为什么 HTTP 200 还不够
+### 中英文演示：为什么 HTTP 200 还不够
+
+两套独立配音，**每套都带中英双语字幕**，同时提供横版与竖版。英文版不只是翻译标题，而是完整英文旁白、双语图示和逐句字幕；界面截图仍保留原中文 UI。
+
+| 配音 | 横版 16:9 | 竖版 9:16 |
+| --- | --- | --- |
+| 中文旁白 | [观看 / 下载](https://github.com/eust-w/freetrade/releases/download/v0.1.1/freetrade-zh-bilingual-landscape.mp4) | [下载](https://github.com/eust-w/freetrade/releases/download/v0.1.1/freetrade-zh-bilingual-portrait.mp4) |
+| English narration | [Watch / download](https://github.com/eust-w/freetrade/releases/download/v0.1.1/freetrade-en-bilingual-landscape.mp4) | [Download](https://github.com/eust-w/freetrade/releases/download/v0.1.1/freetrade-en-bilingual-portrait.mp4) |
+
+[双语版完整附件与字幕](https://github.com/eust-w/freetrade/releases/tag/v0.1.1) · [制作脚本与分镜](media/README.md)
+
+此前发布的 75 秒中文单语版：
 
 [Bilibili](https://www.bilibili.com/video/BV1TFHP6LEgD/) · [YouTube](https://www.youtube.com/watch?v=OfB5z9zKfQA) · [抖音竖版](https://www.douyin.com/video/7700169947489635599) · [X](https://x.com/eustancewu/status/2113931499531874630)
 
-真实演示界面、五因子路径、失败记录和数据日期，一次讲清。[下载横版 / 竖版与封面](https://github.com/eust-w/freetrade/releases/tag/v0.1.0)，或查看[可复现分镜与制作脚本](media/README.md)。
+原版保留在 [v0.1.0](https://github.com/eust-w/freetrade/releases/tag/v0.1.0)，与本次双语成片分别标识，不把旧社交平台链接冒充新版本。
 
 ## 一分钟运行
 

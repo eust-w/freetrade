@@ -1,0 +1,58 @@
+[
+  {
+    "kind": "hook",
+    "title": {"zh": "HTTP 200 ≠ 行情已更新", "en": "HTTP 200 is not data freshness."},
+    "lines": [
+      {"zh": "网页返回二百，不代表行情已经更新。", "en": "An HTTP 200 response does not mean your market data is fresh."},
+      {"zh": "这是 FreeTrade，一个把规则和运行证据一起公开的研究工具。", "en": "Meet FreeTrade: an open research tool that publishes its rules and operational evidence."}
+    ]
+  },
+  {
+    "kind": "demo",
+    "title": {"zh": "从 Python 到研究面板", "en": "From Python to a research dashboard."},
+    "lines": [
+      {"zh": "Python 筛选 A 股研究候选，再生成可直接部署的静态页面。", "en": "Python screens mainland Chinese stocks for research, then builds a deployable static dashboard."},
+      {"zh": "画面是真实演示界面，但名称和数值都是明确标注的合成数据。", "en": "This is the actual demo interface. Names and values are clearly labeled synthetic data."}
+    ]
+  },
+  {
+    "kind": "factors",
+    "title": {"zh": "五组因子，规则可检查", "en": "Five factors. Inspectable rules."},
+    "lines": [
+      {"zh": "估值、成长、质量、动量和资金，采用固定权重。", "en": "Value, growth, quality, momentum, and fund flow use fixed weights."},
+      {"zh": "流动性过滤、风险惩罚和行业限制都在代码里，没有隐藏推理或自动下单。", "en": "Liquidity filters, risk penalties, and sector limits are in the code. No hidden inference or automated orders."}
+    ]
+  },
+  {
+    "kind": "flow",
+    "title": {"zh": "数据到页面，全程可追溯", "en": "Trace the path from data to page."},
+    "lines": [
+      {"zh": "采集数据，生成带日期的快照，再渲染页面和运行状态。", "en": "Collect data, save a dated snapshot, then render the page and run status."},
+      {"zh": "部署后既检查页面可达，也比较线上内容与本地产物。", "en": "After deployment, check availability and compare the published content with the local artifact."}
+    ]
+  },
+  {
+    "kind": "runs",
+    "title": {"zh": "127 份日志，失败也公开", "en": "127 retained logs. Failures included."},
+    "lines": [
+      {"zh": "保留日志中，五份标为实时，一百零五份标为降级，十七份没有完整成功结果。", "en": "The retained logs show five live renders, one hundred five fallback renders, and seventeen without a complete success result."},
+      {"zh": "这些是旧部署的观察记录，不是收益证明，也不是完整的调度成功率。", "en": "These are observations from the old deployment, not investment returns or a complete scheduling success rate."}
+    ]
+  },
+  {
+    "kind": "freshness",
+    "title": {"zh": "生成时间，不冒充数据日期", "en": "Generation time is not the data date."},
+    "lines": [
+      {"zh": "开源版分别显示生成时间、数据日期，以及演示、实时、缓存或降级状态。", "en": "The public version separates generation time, data date, and demo, live, cached, or fallback mode."},
+      {"zh": "真实采集失败默认报错，只有明确允许才回退，绝不拿演示冒充行情。", "en": "Live collection fails explicitly unless fallback is allowed. Synthetic demo data never masquerades as live data."}
+    ]
+  },
+  {
+    "kind": "end",
+    "title": {"zh": "代码、架构、记录，一起开源", "en": "Open code. Open design. Open records."},
+    "lines": [
+      {"zh": "代码、架构、脱敏记录和离线演示，都已在 GitHub 开源。", "en": "Code, architecture, sanitized records, and an offline demo are available on GitHub."},
+      {"zh": "欢迎改进数据质量和回测。这是研究工具，不构成投资建议，也不承诺收益。", "en": "Help improve data quality and backtesting. This is a research tool, not investment advice or a promise of returns."}
+    ]
+  }
+]
